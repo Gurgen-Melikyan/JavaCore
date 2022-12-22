@@ -22,5 +22,11 @@ public class ArrayUtil {
             }
         }
         System.out.println(min);
+        int[] array1 = {1, 2, 3, 0, 7, 99, 85, 0};
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] != 0) {
+                System.out.print(array1[i] + " ");
+            }
+        }
     }
 }
