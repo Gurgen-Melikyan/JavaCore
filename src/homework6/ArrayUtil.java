@@ -2,7 +2,6 @@ package homework6;
 
 public class ArrayUtil {
 
-    int[] Array ={};
     void maxOfArray(int[] array) {
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -12,7 +11,8 @@ public class ArrayUtil {
         }
         System.out.println(max);
     }
-    void minOfArray(int[] array){
+
+    void minOfArray(int[] array) {
 
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -22,7 +22,8 @@ public class ArrayUtil {
         }
         System.out.println(min);
     }
-    void evenCount (int[] array) {
+
+    void evenCount(int[] array) {
         int evenCount = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
@@ -31,7 +32,8 @@ public class ArrayUtil {
         }
         System.out.println(evenCount + " ");
     }
-    void oddCount (int[] array){
+
+    void oddCount(int[] array) {
         int oddCount = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 1) {
