@@ -4,13 +4,13 @@ public class ArraySpaceExample {
     public static void main(String[] args) {
         char[] spaceArray = {' ', 'c', 'a', 't', ' ', 'b', 'i', ' ', 'b', ' ', ' '};
         char[] result = new char[spaceArray.length];
-        for (int j = 1; j < spaceArray.length - 2; j++) {
-            if (spaceArray[0] == ' ') {
-                result[0] = spaceArray[j];
-            } else {
-                result[0] = spaceArray[j];
+        for (int i = 0; i < spaceArray.length; i++) {
+            for (int j = 0; j < spaceArray.length; j++) {
+                if (spaceArray[i] != ' ') {
+                    result[i] = spaceArray[j];
+                }
+                System.out.print(result[i]);
             }
-            System.out.print(result[0]);
         }
     }
 }
