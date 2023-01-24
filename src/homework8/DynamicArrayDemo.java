@@ -2,11 +2,16 @@ package homework8;
 
 public class DynamicArrayDemo {
     public static void main(String[] args) {
-        DynamicArray dynamicArray = new DynamicArray();
-        for (int i = 0; i < 100; i++) {
-            dynamicArray.add(i);
-        }
+        DynamicArray dy = new DynamicArray();
+        dy.add(23);  // 0
+        dy.add(54);  // 1
+        dy.add(57);  // 2
+        dy.add(87);  // 3
+        dy.add(99);  // 4
+        dy.add(2, 44);
+        dy.print();
+        System.out.println(dy.exists(99));
+        System.out.println(dy.getIndexByValue(99));
 
-        dynamicArray.print();
     }
 }
