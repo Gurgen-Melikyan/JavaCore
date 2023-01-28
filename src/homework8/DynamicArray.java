@@ -58,20 +58,33 @@ public class DynamicArray {
     }
 
     public void add(int index, int value) {
-        if (index > size) {
-            System.out.println("չկա նման ինդեքս");
-        } else {
-            int[] newArray = new int[size + 1];
-            newArray[index] = value;
-            for (int i = 0; i < index; i++) {
-                newArray[i] = array[i];
-            }
-            for (int i = index; i < size; i++) {
-                newArray[i + 1] = array[i];
-            }
-            array = newArray;
+        if (index < 0 || index > size - 1) {
+            System.out.println("սխալ ինդեքս");
+            return;
         }
+        if (size == array.length) {
+            extend();
+        }
+        for (int i = size; i >= index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = value;
         size++;
+//        if (index > size) {
+//            System.out.println("չկա նման ինդեքս");
+//        } else {
+//            int[] newArray = new int[size + 1];
+//            newArray[index] = value;
+//            for (int i = 0; i < index; i++) {
+//                newArray[i] = array[i];
+//            }
+//            for (int i = index; i < size; i++) {
+//                newArray[i + 1] = array[i];
+//            }
+//            array = newArray;
+//        }
+//        size++;
+
     }
 
     public boolean exists(int value) {

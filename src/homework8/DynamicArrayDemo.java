@@ -8,10 +8,13 @@ public class DynamicArrayDemo {
         dy.add(57);  // 2
         dy.add(87);  // 3
         dy.add(99);  // 4
-        dy.add(2, 44);
+//        dy.add(2, 44);
+//        dy.print();
+//        System.out.println(dy.exists(99));
+//        System.out.println(dy.getIndexByValue(99));
+        System.out.println();
+        dy.add(2,77);
         dy.print();
-        System.out.println(dy.exists(99));
-        System.out.println(dy.getIndexByValue(99));
 
     }
 }
