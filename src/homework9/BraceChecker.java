@@ -9,7 +9,7 @@ public class BraceChecker {
     }
 
     public void check() {
-        Stack st = new Stack(10);
+        Stack st = new Stack(99);
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
             char var;
@@ -25,27 +25,36 @@ public class BraceChecker {
                     break;
                 case ')':
                     var = (char) st.pop();
-                    if (var != '(') {
+                    if (var == 0) {
+                        System.out.println("Error " + i + " closed " + c + " but not opened ");
+                    } else if (var != '(') {
                         System.out.println("Error: " + i + " opened " + var +
                                 "but closed" + c);
                     }
                     break;
                 case ']':
                     var = (char) st.pop();
-                    if (var != '[') {
+                    if (var == 0) {
+                        System.out.println("Error " + i + " closed " + c + " but not opened ");
+                    } else if (var != '[') {
                         System.out.println("Error: " + i + " opened " + var +
                                 "but closed" + c);
                     }
                     break;
                 case '}':
                     var = (char) st.pop();
-                    if (var != '{'){
+                    if (var == 0) {
+                        System.out.println("Error " + i + " closed " + c + " but not opened ");
+                    } else if (var != '{') {
                         System.out.println("Error: " + i + " opened " + var +
                                 "but closed" + c);
+                        break;
                     }
-                    break;
             }
-
+        }
+        int x = st.getTos();
+        for (int i = 0; i <= x; i++) {
+            System.out.println("Error " + i + " opened but not closed ");
         }
     }
 }

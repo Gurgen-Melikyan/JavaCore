@@ -18,10 +18,15 @@ public class Stack {
         }
     }
 
+    public int getTos() {
+        return tos;
+    }
+
     int pop() {
         if (tos < 0) {
-            System.out.println("Cтeк не загружен.");
+           // System.out.println("Cтeк не загружен.");
             return 0;
-        } else return stck[tos--];
+       } else
+            return stck[tos--];
     }
 }
