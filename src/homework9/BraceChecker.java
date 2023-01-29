@@ -54,7 +54,8 @@ public class BraceChecker {
         }
         int x = st.getTos();
         for (int i = 0; i <= x; i++) {
-            System.out.println("Error " + i + " opened but not closed ");
+            char c = (char) st.pop();
+            System.out.println("Error " + i + " opened " + c + " but not closed ");
         }
     }
 }
