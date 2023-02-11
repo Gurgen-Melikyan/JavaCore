@@ -1,9 +1,9 @@
 package chapter8;
 
 public class Box {
-    double width;
-    double height;
-    double depth;
+    private double width;
+    private double height;
+    private double depth;
 
     Box(Box ob) {
         width = ob.width;
