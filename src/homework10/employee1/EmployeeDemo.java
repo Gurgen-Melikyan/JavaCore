@@ -1,12 +1,16 @@
 package homework10.employee1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class EmployeeDemo {
     static Scanner scanner = new Scanner(System.in);
     static EmployeeStorage employeeStorage = new EmployeeStorage();
+    static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         boolean isRun = true;
         while (isRun) {
             printCommands();
@@ -43,7 +47,7 @@ public class EmployeeDemo {
                     employeeStorage.changeEmployeeById(id, position);
                     break;
                 case "7":
-                   employeeStorage.printActiveEmployees();
+                    employeeStorage.printActiveEmployees();
                     break;
                 case "8":
                     System.out.println("Please input employee id");
@@ -85,14 +89,17 @@ public class EmployeeDemo {
         }
     }
 
-    public static void addEmployee() {
-        System.out.println("please input name,surname,employeeId,salary,company,position");
+    public static void addEmployee() throws ParseException {
+        System.out.println("please input name,surname,employeeId,salary,company,position,date(10/11/2002)");
         String employeeDataStr = scanner.nextLine();
         String[] employeeData = employeeDataStr.split(",");
         String employeeId = employeeData[2];
+        String date = employeeData[6];
+        Date date1 = sdf.parse(date);
+        Date newDate = new Date();
         Employee employee = employeeStorage.getEmployeeById(employeeId);
         if (employee == null) {
-            Employee newEmployee = new Employee(employeeData[0], employeeData[1], employeeId, Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5]);
+            Employee newEmployee = new Employee(employeeData[0], employeeData[1], employeeId, Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5], date1);
             employeeStorage.add(newEmployee);
             System.out.println("Employee was add");
         } else {
@@ -101,5 +108,5 @@ public class EmployeeDemo {
     }
 
 }
-//gug,gug,a0001,90000,epam,dm
-//pox,pox,a0002,452,epam,mid
+//gug,gug,a0001,90000,epam,dm,07-04-2002
+//pox,pox,a0002,452,epam,mid,09-06-2000
