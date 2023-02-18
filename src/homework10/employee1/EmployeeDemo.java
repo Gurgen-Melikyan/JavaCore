@@ -99,7 +99,7 @@ public class EmployeeDemo {
         Date newDate = new Date();
         Employee employee = employeeStorage.getEmployeeById(employeeId);
         if (employee == null) {
-            Employee newEmployee = new Employee(employeeData[0], employeeData[1], employeeId, Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5], date1);
+            Employee newEmployee = new Employee(employeeData[0], employeeData[1], employeeId, Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5], date1, new Date());
             employeeStorage.add(newEmployee);
             System.out.println("Employee was add");
         } else {

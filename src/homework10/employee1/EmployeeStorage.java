@@ -1,5 +1,7 @@
 package homework10.employee1;
 
+import java.util.Date;
+
 public class EmployeeStorage {
 
     private Employee[] employees = new Employee[10];

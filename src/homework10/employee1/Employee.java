@@ -13,10 +13,10 @@ public class Employee {
     private String position;
     private boolean active = true;
     private Date dateOfBirthday;
+    private Date registerDate;
 
-    private Date registerDate = new Date();
 
-    public Employee(String name, String surname, String employeeId, double salary, String company, String position, Date dateOfBirthday) {
+    public Employee(String name, String surname, String employeeId, double salary, String company, String position, Date dateOfBirthday, Date registerDate) {
         this.name = name;
         this.surname = surname;
         this.employeeId = employeeId;
@@ -24,6 +24,7 @@ public class Employee {
         this.company = company;
         this.position = position;
         this.dateOfBirthday = dateOfBirthday;
+        this.registerDate = registerDate;
     }
 
 
@@ -34,7 +35,7 @@ public class Employee {
         return registerDate;
     }
 
-    public void setRegisterDate(Date date) {
+    public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
 
@@ -139,7 +140,8 @@ public class Employee {
     }
 
     @Override
-    public String toString() {
+    public String
+    toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
