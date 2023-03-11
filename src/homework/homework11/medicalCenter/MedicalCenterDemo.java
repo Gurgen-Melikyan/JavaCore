@@ -2,6 +2,7 @@ package homework.homework11.medicalCenter;
 
 import homework.homework11.medicalCenter.model.Doctor;
 import homework.homework11.medicalCenter.model.Patient;
+import homework.homework11.medicalCenter.model.Profession;
 import homework.homework11.medicalCenter.storage.PersonStorage;
 import homework.homework11.medicalCenter.util.DateUtil;
 
@@ -70,7 +71,6 @@ public class MedicalCenterDemo implements Commands {
             System.out.println("Please input id, name,surname,phone,registerDateTime(27-02-2023 14:00)");
             String patientDataStr = scanner.nextLine();
             String[] patientData = patientDataStr.split(",");
-
             try {
                 Date registerDateTime = DateUtil.stringToDateTime(patientData[4]);
                 if (personStorage.isDoctorAvailable(doctorById, registerDateTime)) {

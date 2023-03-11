@@ -1,7 +1,5 @@
 package homework.homework11.medicalCenter.model;
 
-import homework.homework11.medicalCenter.Profession;
-
 import java.util.Objects;
 
 public class Doctor extends Person {
